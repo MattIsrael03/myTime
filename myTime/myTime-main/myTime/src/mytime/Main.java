@@ -3,38 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package myTime;
+package mytime;
 
-/**
- *
- * @author User
- */
-public class Main {
-
+public class main {
     public static void main(String[] args) {
-        
-        
-        myTime.MyTime time = new myTime.MyTime(9, 30, 0, false); 
+ 
+        MyTime myTime = new MyTime(18, 30, 0, true);
 
-      
-        System.out.println("Initial 12-hour format:");
-        time.displayTime12();
-        System.out.println("Initial 24-hour format:");
-        time.displayTime24();
+        System.out.println("Time in 12-hour format:");
+        myTime.displayTime12();
+
+        System.out.println("\nTime in 24-hour format:");
+        myTime.displayTime24();
+
+        myTime.advanceTime(3600);
         
+        System.out.println("\nUpdated Time in 12-hour format:");
+        myTime.displayTime12();
+
+        System.out.println("\nUpdated Time in 24-hour format:");
+        myTime.displayTime24();
         
-        time.tickBySecond();
-        System.out.println("Time after ticking by one second:");
-        time.displayTime12();
-        
-        
-        time.tickByMinute();
-        System.out.println("Time after ticking by one minute:");
-        time.displayTime24();
-        
-        
-        time.tickByHour();
-        System.out.println("Time after ticking by one hour:");
-        time.displayTime12();
+        myTime.tickByMinute();
+
+        System.out.println("\nUpdated Time in 12-hour format:");
+        myTime.displayTime12();
+
+        System.out.println("\nUpdated Time in 24-hour format:");
+        myTime.displayTime24();
     }
 }
